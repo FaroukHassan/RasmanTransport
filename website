@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شركة رسمان للنقل المبرد</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #10b981;
+            --secondary-color: #059669;
+            --light-color: #d1fae5;
+            --dark-color: #064e3b;
+            --text-color: #1f2937;
+            --light-text: #f9fafb;
+            --body-bg: #f3f4f6;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--body-bg);
+            color: var(--text-color);
+            overflow-x: hidden;
+        }
+        .rtl {
+            direction: rtl;
+            text-align: right;
+        }
+        .ltr {
+            direction: ltr;
+            text-align: left;
+        }
+        .hero-section {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 100vh;
+        }
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        .section-heading {
+            position: relative;
+            margin-bottom: 2rem;
+            font-weight: 700;
+            color: var(--dark-color);
+        }
+        .section-heading::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            right: 0;
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-color);
+        }
+        .service-card {
+            background-color: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        .feature-item {
+            padding: 1.5rem;
+            border-radius: 8px;
+            background-color: white;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        .feature-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: var(--light-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+        }
+        .client-section {
+            background-color: var(--light-color);
+        }
+        .testimonial-card {
+            background-color: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+        .contact-form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        .contact-info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--light-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 1rem;
+            color: var(--primary-color);
+            font-size: 1.25rem;
+        }
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .nav-link {
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            padding: 0.5rem 1rem;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary-color);
+        }
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        .language-switcher {
+            cursor: pointer;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        .language-switcher:hover {
+            background-color: var(--light-color);
+        }
+        .animate-fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .animate-fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        @media (max-width: 768px) {
+            .hero-section {
+                height: auto;
+                min-height: 100vh;
+                padding-top: 80px;
+            }
+            .navbar {
+                padding: 1rem;
+            }
+            .mobile-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                height: 100vh;
+                background-color: white;
+                z-index: 1000;
+                padding: 2rem;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+                transition: right 0.3s ease;
+                overflow-y: auto;
+            }
+            .mobile-menu.active {
+                right: 0;
+            }
+            .mobile-nav-link {
+                display: block;
+                padding: 1rem 0;
+                font-weight: 500;
+                border-bottom: 1px solid #e5e7eb;
+            }
+            .menu-overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5);
+                z-index: 999;
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+            }
+            .menu-overlay.active {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- آلية تبديل اللغة -->
+    <div id="language-content" class="ar-content">
+        <!-- Mobile Menu Overlay -->
+        <div class="menu-overlay" id="menuOverlay"></div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-xl font-bold text-gray-800">رسمان للنقل المبرد</h2>
+                <button id="closeMenu" class="text-gray-600 text-2xl">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <a href="#home" class="mobile-nav-link">الرئيسية</a>
+            <a href="#about" class="mobile-nav-link">عن الشركة</a>
+            <a href="#services" class="mobile-nav-link">خدماتنا</a>
+            <a href="#fleet" class="mobile-nav-link">أسطولنا</a>
+            <a href="#technology" class="mobile-nav-link">التكنولوجيا</a>
+            <a href="#clients" class="mobile-nav-link">عملاؤنا</a>
+            <a href="#contact" class="mobile-nav-link">اتصل بنا</a>
+            <div class="mt-6">
+                <div class="language-switcher" id="mobileLangSwitcher">
+                    <i class="fas fa-globe ml-2"></i>
+                    <span id="mobileCurrentLang">العربية</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Navbar -->
+        <nav class="navbar fixed top-0 left-0 right-0 px-4 py-3 z-50">
+            <div class="container mx-auto">
+                <div class="flex justify-between items-center">
+                    <div class="flex items-center">
+                        <a href="#" class="text-2xl font-bold text-green-600">رسمان للنقل المبرد</a>
+                    </div>
+                    <div class="hidden md:flex items-center space-x-6 space-x-reverse">
+                        <a href="#home" class="nav-link active">الرئيسية</a>
+                        <a href="#about" class="nav-link">عن الشركة</a>
+                        <a href="#services" class="nav-link">خدماتنا</a>
+                        <a href="#fleet" class="nav-link">أسطولنا</a>
+                        <a href="#technology" class="nav-link">التكنولوجيا</a>
+                        <a href="#clients" class="nav-link">عملاؤنا</a>
+                        <a href="#contact" class="nav-link">اتصل بنا</a>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="language-switcher hidden md:block" id="langSwitcher">
+                            <i class="fas fa-globe ml-2"></i>
+                            <span id="currentLang">العربية</span>
+                        </div>
+                        <button id="mobileMenuBtn" class="md:hidden text-gray-600 focus:outline-none">
+                            <i class="fas fa-bars text-2xl"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section id="home" class="hero-section flex items-center">
+            <div class="container mx-auto px-4">
+                <div class="max-w-3xl mx-auto text-center text-white">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6 animate-fade-in visible">حلول النقل المبرد الموثوقة منذ عام 2020</h1>
+                    <p class="text-xl mb-8 animate-fade-in visible">نقدم خدمات نقل مبرد متميزة بأعلى معايير الجودة والسلامة لضمان وصول منتجاتك بحالة ممتازة</p>
+                    <a href="#contact" class="btn-primary animate-fade-in visible">احصل على عرض سعر الآن</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-4">عن الشركة</h2>
+                    <div class="w-20 h-1 bg-green-500 mx-auto"></div>
+                </div>
+                <div class="flex flex-col md:flex-row items-center gap-10">
+                    <div class="md:w-1/2">
+                        <img src="https://images.unsplash.com/photo-1600965962351-828c071f5472?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="شاحنة نقل مبرد" class="rounded-lg shadow-lg w-full h-auto">
+                    </div>
+                    <div class="md:w-1/2">
+                        <h3 class="text-2xl font-bold mb-4 text-green-600">تأسست عام 2020</h3>
+                        <p class="mb-6 text-lg">بدأت شركة رسمان للنقل المبرد رحلتها في عام 2020 وسرعان ما أصبحت واحدة من الشركات الرائدة في قطاع النقل المبرد في المملكة.</p>
+                        
+                        <h4 class="text-xl font-bold mb-3">مهمتنا</h4>
+                        <p class="mb-6">تقديم خدمات نقل مبرد موثوقة وآمنة تلبي احتياجات عملائنا مع الحفاظ على جودة وسلامة المنتجات المنقولة طوال الرحلة.</p>
+                        
+                        <h4 class="text-xl font-bold mb-3">قيمنا</h4>
+                        <ul class="mb-6 list-disc list-inside">
+                            <li class="mb-2">الالتزام بالجودة والموثوقية</li>
+                            <li class="mb-2">الشفافية والنزاهة في جميع المعاملات</li>
+                            <li class="mb-2">التركيز على رضا العملاء</li>
+                            <li class="mb-2">الاستدامة والحفاظ على البيئة</li>
+                        </ul>
+                        
+                        <h4 class="text-xl font-bold mb-3">رؤيتنا</h4>
+                        <p>أن نصبح الخيار الأول والأمثل لخدمات النقل المبرد في الشرق الأوسط من خلال توفير حلول مبتكرة وموثوقة تفوق توقعات عملائنا.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-4">خدماتنا</h2>
+                    <div class="w-20 h-1 bg-green-500 mx-auto"></div>
+                    <p class="mt-4 text-lg max-w-3xl mx-auto">نقدم مجموعة متكاملة من خدمات النقل المبرد المصممة خصيصاً لتلبية احتياجات مختلف القطاعات</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Service 1 -->
+                    <div class="service-card animate-fade-in">
+                        <div class="service-icon">
+                            <i class="fas fa-hamburger"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">نقل المواد الغذائية</h3>
+                        <p>نقل آمن وموثوق للمواد الغذائية الطازجة والمجمدة مع الحفاظ على سلسلة التبريد المتكاملة من المصدر إلى الوجهة.</p>
+                    </div>
+                    
+                    <!-- Service 2 -->
+                    <div class="service-card animate-fade-in">
+                        <div class="service-icon">
+                            <i class="fas fa-pills"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">نقل الأدوية والمستحضرات الطبية</h3>
+                        <p>خدمات نقل متخصصة للأدوية والمستحضرات الطبية التي تتطلب ظروف درجة حرارة محددة وفقاً للمعايير العالمية.</p>
+                    </div>
+                    
+                    <!-- Service 3 -->
+                    <div class="service-card animate-fade-in">
+                        <div class="service-icon">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">نقل المنتجات الزراعية</h3>
+                        <p>خدمات نقل مبرد للمنتجات الزراعية الطازجة كالفواكه والخضروات مع ضمان وصولها بأعلى جودة وطزاجة.</p>
+                    </div>
+                    
+                    <!-- Service 4 -->
+                    <div class="service-card animate-fade-in">
+                        <div class="service-icon">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">نقل المواد الكيميائية</h3>
+                        <p>خدمات نقل آمنة للمواد الكيميائية الحساسة للحرارة مع الالتزام بجميع معايير السلامة والاشتراطات البيئية.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fleet Section -->
+        <section id="fleet" class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-4">أسطولنا ومعداتنا</h2>
+                    <div class="w-20 h-1 bg-green-500 mx-auto"></div>
+                </div>
+                <div class="flex flex-col md:flex-row items-center gap-10">
+                    <div class="md:w-1/2">
+                        <div class="rounded-lg overflow-hidden shadow-lg">
+                            <img src="https://images.unsplash.com/photo-1586768026902-d9ef7908a80d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="أسطول النقل المبرد" class="w-full h-auto">
+                        </div>
+                    </div>
+                    <div class="md:w-1/2">
+                        <h3 class="text-2xl font-bold mb-4 text-green-600">شاحنات حديثة بتقنيات متطورة</h3>
+                        <p class="mb-6 text-lg">تمتلك شركة رسمان أسطولاً حديثاً من شاحنات النقل المبرد المجهزة بأحدث أنظمة التبريد والتحكم الذكية، مما يضمن الحفاظ على درجات الحرارة المطلوبة طوال رحلة النقل.</p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-snowflake"></i>
+                                </div>
+                                <h4 class="text-lg font-bold mb-2">أنظمة تبريد متطورة</h4>
+                                <p>تقنيات تبريد متقدمة تضمن ثبات درجة الحرارة المطلوبة بدقة عالية.</p>
+                            </div>
+                            
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <h4 class="text-lg font-bold mb-2">أنظمة تتبع GPS</h4>
+                                <p>متابعة الشحنات في الوقت الفعلي مع خرائط دقيقة للمسارات ومواقع الشاحنات.</p>
+                            </div>
+                            
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-thermometer-half"></i>
+                                </div>
+                                <h4 class="text-lg font-bold mb-2">مراقبة درجات الحرارة</h4>
+                                <p>أجهزة استشعار متطورة لمراقبة وتسجيل درجات الحرارة باستمرار.</p>
+                            </div>
+                            
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <h4 class="text-lg font-bold mb-2">أنظمة أمان متقدمة</h4>
+                                <p>أنظمة أمان متكاملة لحماية الشاحنات والبضائع أثناء النقل.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quality and Safety Section -->
+        <section id="quality" class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-4">الجودة والسلامة</h2>
+                    <div class="w-20 h-1 bg-green-500 mx-auto"></div>
+                </div>
+                <div class="max-w-4xl mx-auto">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <div class="mb-4 text-center">
+                                <i class="fas fa-certificate text-5xl text-green-600"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-4 text-center">الشهادات والاعتمادات</h3>
+                            <ul class="mb-4">
+                                <li class="flex items-center mb-3">
+                                    <i class="fas fa-check-circle text-green-600 ml-2"></i>
+                                    <span>شهادة الآيزو 9001 لنظام إدارة الجودة</span>
+                                </li>
+                                <li class="flex items-center mb-3">
+                                    <i class="fas fa-check-circle text-green-600 ml-2"></i>
+                                    <span>اعتماد نظام تحليل المخاطر HACCP</span>
+                                </li>
+                                <li class="flex items-center mb-3">
+                                    <i class="fas fa-check-circle text-green-600 ml-2"></i>
+                                    <span>شهادة الامتثال البيئي والاستدامة</span>
+                                </li>
+                                <li class="flex items-center mb-3">
+                                    <i class="fas fa-check-circle text-green-600 ml-2"></i>
+                                    <span>شهادة سلامة الغذاء لنقل المواد الغذائية</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <div class="mb-4 text-center">
+                                <i class="fas fa-shield-alt text-5xl text-green-600"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-4 text-center">تدابير السلامة والضمان</h3>
+                            <ul class="mb-4">
+                                <li class="flex items-center mb-3">
+                                    <i class="fas fa-check-circle text-green-600 ml-2"></i>
+                                    <span>برامج تدريب مستمرة للسائقين على السلامة</span>
+                                </li>
+                                <li class="flex items-center mb-3">
+                                    <i class="fas fa-check-circle text-green-600 ml-2"></i>
+                                    <span>فحص وصيانة دورية لجميع المركبات</span>
+                                </li>
+                                <li class="flex items-center mb-3">
+                                    <i class="fas fa-check-circle text-green-600 ml-2"></i>
+                                    <span>بروتوكولات صارمة للتعقيم والنظافة</span>
+                                </li>
+                                <li class="flex items-center mb-3">
+                                    <i class="fas fa-check-circle text-green-600 ml-2"></i>
+                                    <span>تأمين شامل على جميع الشحنات والمركبات</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technology Section -->
+        <section id="technology" class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-4">التكنولوجيا والابتكار</h2>
+                    <div class="w-20 h-1 bg-green-500 mx-auto"></div>
+                    <p class="mt-4 text-lg max-w-3xl mx-auto">نستخدم أحدث التقنيات في مجال النقل المبرد لضمان أعلى مستويات الجودة والكفاءة</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    <!-- Tech Feature 1 -->
+                    <div class="bg-gray-50 rounded-lg p-6 shadow-md hover:shadow-lg transition duration-300 animate-fade-in">
+                        <div class="mb-4 text-center">
+                            <i class="fas fa-temperature-low text-4xl text-green-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-center">مراقبة درجة الحرارة في الوقت الفعلي</h3>
+                        <p class="text-center">أنظمة متطورة لمراقبة وتسجيل درجات الحرارة على مدار الساعة مع إرسال تنبيهات فورية عند أي تغيير.</p>
+                    </div>
+                    
+                    <!-- Tech Feature 2 -->
+                    <div class="bg-gray-50 rounded-lg p-6 shadow-md hover:shadow-lg transition duration-300 animate-fade-in">
+                        <div class="mb-4 text-center">
+                            <i class="fas fa-wifi text-4xl text-green-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-center">تكامل إنترنت الأشياء</h3>
+                        <p class="text-center">تقنيات إنترنت الأشياء (IoT) تتيح المراقبة المستمرة لكافة جوانب عملية النقل وظروف الشحن.</p>
+                    </div>
+                    
+                    <!-- Tech Feature 3 -->
+                    <div class="bg-gray-50 rounded-lg p-6 shadow-md hover:shadow-lg transition duration-300 animate-fade-in">
+                        <div class="mb-4 text-center">
+                            <i class="fas fa-satellite-dish text-4xl text-green-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-center">تتبع ذكي للشحنات</h3>
+                        <p class="text-center">منصة تتبع متطورة تتيح للعملاء متابعة شحناتهم في الوقت الحقيقي مع تقديرات دقيقة لمواعيد الوصول.</p>
+                    </div>
+                </div>
+                
+                <div class="mt-16 flex flex-col md:flex-row items-center justify-center gap-10">
+                    <div class="md:w-1/2 order-2 md:order-1">
+                        <h3 class="text-2xl font-bold mb-4 text-green-600">مركز تحكم متطور</h3>
+                        <p class="mb-6 text-lg">يعمل فريقنا من خلال مركز تحكم متطور يتيح مراقبة كاملة وشاملة لكافة الشاحنات والشحنات على مدار الساعة.</p>
+                        
+                        <ul class="mb-6">
+                            <li class="flex items-start mb-4">
+                                <i class="fas fa-check-circle text-green-600 mt-1 ml-2"></i>
+                                <div>
+                                    <h4 class="font-bold">مراقبة مستمرة 24/7</h4>
+                                    <p>فريق مراقبة على مدار الساعة للاستجابة الفورية لأي طارئ</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start mb-4">
+                                <i class="fas fa-check-circle text-green-600 mt-1 ml-2"></i>
+                                <div>
+                                    <h4 class="font-bold">تحليلات البيانات المتقدمة</h4>
+                                    <p>تحليل مستمر للبيانات لتحسين المسارات وتقليل استهلاك الوقود</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start mb-4">
+                                <i class="fas fa-check-circle text-green-600 mt-1 ml-2"></i>
+                                <div>
+                                    <h4 class="font-bold">التقارير التفصيلية</h4>
+                                    <p>تقارير شاملة للعملاء حول درجات الحرارة ومسار الشحنة</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="md:w-1/2 order-1 md:order-2">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="مركز التحكم" class="rounded-lg shadow-lg w-full h-auto">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Clients Section -->
+        <section id="clients" class="py-16 client-section">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-4">عملاؤنا</h2>
+                    <div class="w-20 h-1 bg-green-500 mx-auto"></div>
+                    <p class="mt-4 text-lg max-w-3xl mx-auto">نفتخر بتقديم خدماتنا لمجموعة متنوعة من العملاء في قطاعات مختلفة</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl mx-auto">
+                    <div class="bg-white rounded-lg p-6 shadow-md">
+                        <div class="text-4xl text-green-600 mb-4 text-center">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-center">قطاع الأغذية والمشروبات</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-600 ml-2"></i>
+                                <span>شركات توزيع المواد الغذائية</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-600 ml-2"></i>
+                                <span>سلاسل محلات السوبرماركت</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-600 ml-2"></i>
+                                <span>مصانع الألبان والمنتجات الغذائية</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-600 ml-2"></i>
+                                <span>مصانع اللحوم والدواجن المجمدة</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg p-6 shadow-md">
+                        <div class="text-4xl text-green-600 mb-4 text-center">
+                            <i class="fas fa-capsules"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-center">قطاع الصيدلة والرعاية الصحية</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-600 ml-2"></i>
+                                <span>شركات الأدوية الكبرى</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-600 ml-2"></i>
+                                <span>مستودعات الأدوية المركزية</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-600 ml-2"></i>
+                                <span>المستشفيات ومراكز الرعاية الصحية</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-600 ml-2"></i>
+                                <span>مصنعي المستلزمات الطبية</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg p-6 shadow-md">
+                        <div class="text-4xl text-green-600 mb-4 text-center">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-center">القطاع الزراعي</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-600 ml-2"></i>
+                                <span>مزارع الإنتاج الزراعي</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-600 ml-2"></i>
+                                <span>أسواق الجملة للخضار والفواكه</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-600 ml-2"></i>
+                                <span>مصدري المنتجات الزراعية</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-600 ml-2"></i>
+                                <span>شركات تعبئة وتغليف المنتجات الزراعية</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg p-6 shadow-md">
+                        <div class="text-4xl text-green-600 mb-4 text-center">
+                            <i class="fas fa-vial"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-center">قطاع الكيماويات</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-600 ml-2"></i>
+                                <span>مصانع المواد الكيميائية</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-600 ml-2"></i>
+                                <span>شركات مستحضرات التجميل</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-600 ml-2"></i>
+                                <span>مصنعي المنظفات والمطهرات</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-600 ml-2"></i>
+                                <span>شركات المواد الخام الكيميائية</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Testimonials -->
+                <div class="mt-16">
+                    <h3 class="text-2xl font-bold mb-8 text-center">ماذا يقول عملاؤنا عنا</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="testimonial-card">
+                            <div class="flex justify-center mb-4">
+                                <div class="text-yellow-400 text-xl">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 mb-4 text-center">"نعتمد على شركة رسمان في نقل منتجاتنا الغذائية المجمدة منذ سنوات، وهم دائماً على مستوى التوقعات من حيث الالتزام بالمواعيد ودرجات الحرارة المطلوبة."</p>
+                            <p class="font-bold text-center">أحمد الحارثي</p>
+                            <p class="text-sm text-gray-600 text-center">مدير العمليات - شركة الغذاء المتميز</p>
+                        </div>
+                        
+                        <div class="testimonial-card">
+                            <div class="flex justify-center mb-4">
+                                <div class="text-yellow-400 text-xl">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 mb-4 text-center">"نقل الأدوية يتطلب دقة عالية في الحفاظ على درجات الحرارة وشركة رسمان تقدم خدمة ممتازة مع توثيق كامل لدرجات الحرارة طوال فترة النقل."</p>
+                            <p class="font-bold text-center">سارة العتيبي</p>
+                            <p class="text-sm text-gray-600 text-center">مديرة سلسلة التوريد - مجموعة صيدليات الصحة</p>
+                        </div>
+                        
+                        <div class="testimonial-card">
+                            <div class="flex justify-center mb-4">
+                                <div class="text-yellow-400 text-xl">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 mb-4 text-center">"خدمة عملاء متميزة ومتابعة دقيقة للشحنات. نقدر الشفافية التي تتميز بها شركة رسمان في التواصل والتقارير المفصلة التي يقدمونها."</p>
+                            <p class="font-bold text-center">فهد السليم</p>
+                            <p class="text-sm text-gray-600 text-center">المدير التنفيذي - شركة الخيرات الزراعية</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Logistics Excellence Section -->
+        <section id="excellence" class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-4">تميزنا في الخدمات اللوجستية</h2>
+                    <div class="w-20 h-1 bg-green-500 mx-auto"></div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto">
+                    <div class="text-center">
+                        <div class="w-20 h-20 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-shipping-fast text-3xl text-green-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">توصيل في الموعد المحدد</h3>
+                        <p>نلتزم بجداول التسليم المتفق عليها مع تحديثات مستمرة عن حالة الشحنة ووقت الوصول المتوقع.</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-20 h-20 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-search-location text-3xl text-green-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">تتبع الشحنات 24/7</h3>
+                        <p>منصة تتبع متطورة تتيح للعملاء متابعة شحناتهم على مدار الساعة مع معلومات دقيقة عن الموقع ودرجة الحرارة.</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-20 h-20 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-cogs text-3xl text-green-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">حلول مخصصة</h3>
+                        <p>نقدم حلول نقل مبرد مخصصة لتلبية احتياجات كل عميل مع مرونة في الخدمات والجداول الزمنية.</p>
+                    </div>
+                </div>
+                
+                <div class="mt-16 bg-gray-50 rounded-xl p-8 max-w-5xl mx-auto shadow-md">
+                    <div class="flex flex-col md:flex-row items-center gap-8">
+                        <div class="md:w-1/3 text-center">
+                            <img src="https://images.unsplash.com/photo-1580674285054-bed31e145f59?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="خدمة النقل المبرد" class="rounded-lg shadow-lg w-full h-auto">
+                        </div>
+                        <div class="md:w-2/3">
+                            <h3 class="text-2xl font-bold mb-4 text-green-600">لماذا تختار رسمان للنقل المبرد؟</h3>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-600 mt-1 ml-2"></i>
+                                    <p>خبرة متخصصة في النقل المبرد منذ 2020</p>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-600 mt-1 ml-2"></i>
+                                    <p>أسطول حديث مجهز بأحدث التقنيات</p>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-600 mt-1 ml-2"></i>
+                                    <p>مراقبة مستمرة لدرجات الحرارة</p>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-600 mt-1 ml-2"></i>
+                                    <p>فريق مدرب على أعلى مستوى</p>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-600 mt-1 ml-2"></i>
+                                    <p>شهادات واعتمادات دولية</p>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-600 mt-1 ml-2"></i>
+                                    <p>الالتزام بالمواعيد وجودة الخدمة</p>
+                                </div>
+                            </div>
+                            <div class="mt-6">
+                                <a href="#contact" class="btn-primary inline-block">تواصل معنا الآن</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-4">اتصل بنا</h2>
+                    <div class="w-20 h-1 bg-green-500 mx-auto"></div>
+                    <p class="mt-4 text-lg max-w-3xl mx-auto">نحن هنا للإجابة على استفساراتكم وتقديم عروض الأسعار المناسبة لاحتياجات النقل المبرد الخاصة بكم</p>
+                </div>
+                
+                <div class="flex flex-col md:flex-row gap-10 max-w-5xl mx-auto">
+                    <div class="md:w-1/2 bg-white p-8 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-bold mb-6 text-green-600">معلومات الاتصال</h3>
+                        
+                        <div class="contact-info-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">رقم الهاتف</h4>
+                                <p class="text-gray-700 ltr">+966 12 345 6789</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-info-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">البريد الإلكتروني</h4>
+                                <p class="text-gray-700 ltr">info@rasman-transport.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-info-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">العنوان</h4>
+                                <p class="text-gray-700">المملكة العربية السعودية، الرياض، طريق الملك فهد، مبنى رقم 1234</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-info-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">ساعات العمل</h4>
+                                <p class="text-gray-700">الأحد - الخميس: 8:00 صباحاً - 5:00 مساءً</p>
+                                <p class="text-gray-700">خدمة الطوارئ: متاحة 24/7</p>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="font-bold mb-4">تابعنا على</h4>
+                            <div class="flex space-x-4 space-x-reverse">
+                                <a href="#" class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-600 hover:bg-green-600 hover:text-white transition duration-300">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-600 hover:bg-green-600 hover:text-white transition duration-300">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-600 hover:bg-green-600 hover:text-white transition duration-300">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-600 hover:bg-green-600 hover:text-white transition duration-300">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="md:w-1/2 bg-white p-8 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-bold mb-6 text-green-600">تواصل معنا</h3>
+                        <form class="contact-form">
+                            <div class="mb-4">
+                                <label for="name">الاسم الكامل</label>
+                                <input type="text" id="name" placeholder="أدخل اسمك الكامل" required>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="email">البريد الإلكتروني</label>
+                                <input type="email" id="email" placeholder="أدخل بريدك الإلكتروني" required>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="phone">رقم الهاتف</label>
+                                <input type="tel" id="phone" placeholder="أدخل رقم هاتفك">
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="service">الخدمة المطلوبة</label>
+                                <select id="service" class="w-full p-3 border border-gray-300 rounded-md">
+                                    <option value="">اختر الخدمة</option>
+                                    <option value="food">نقل المواد الغذائية</option>
+                                    <option value="pharma">نقل الأدوية والمستحضرات الطبية</option>
+                                    <option value="agri">نقل المنتجات الزراعية</option>
+                                    <option value="chem">نقل المواد الكيميائية</option>
+                                    <option value="other">خدمة أخرى</option>
+                                </select>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label for="message">الرسالة</label>
+                                <textarea id="message" rows="5" placeholder="اكتب رسالتك هنا..." required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn-primary w-full">إرسال الرسالة</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map Section -->
+        <div class="w-full h-80 bg-gray-300 mt-8">
+            <!-- يمكن استبدال هذا بخريطة Google Maps الفعلية -->
+            <div class="w-full h-full flex items-center justify-center">
+                <p class="text-gray-600 text-lg">هنا يتم إضافة خريطة Google Maps</p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="bg-gray-800 text-white py-12">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">رسمان للنقل المبرد</h3>
+                        <p class="mb-4">شركة رائدة في مجال النقل المبرد تقدم خدمات نقل آمنة وموثوقة بأعلى معايير الجودة منذ عام 2020.</p>
+                        <div class="flex space-x-4 space-x-reverse">
+                            <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">روابط سريعة</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#home" class="text-gray-400 hover:text-white transition duration-300">الرئيسية</a></li>
+                            <li><a href="#about" class="text-gray-400 hover:text-white transition duration-300">عن الشركة</a></li>
+                            <li><a href="#services" class="text-gray-400 hover:text-white transition duration-300">خدماتنا</a></li>
+                            <li><a href="#fleet" class="text-gray-400 hover:text-white transition duration-300">أسطولنا</a></li>
+                            <li><a href="#technology" class="text-gray-400 hover:text-white transition duration-300">التكنولوجيا</a></li>
+                            <li><a href="#clients" class="text-gray-400 hover:text-white transition duration-300">عملاؤنا</a></li>
+                            <li><a href="#contact" class="text-gray-400 hover:text-white transition duration-300">اتصل بنا</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">خدماتنا</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#services" class="text-gray-400 hover:text-white transition duration-300">نقل المواد الغذائية</a></li>
+                            <li><a href="#services" class="text-gray-400 hover:text-white transition duration-300">نقل الأدوية والمستحضرات الطبية</a></li>
+                            <li><a href="#services" class="text-gray-400 hover:text-white transition duration-300">نقل المنتجات الزراعية</a></li>
+                            <li><a href="#services" class="text-gray-400 hover:text-white transition duration-300">نقل المواد الكيميائية</a></li>
+                            <li><a href="#services" class="text-gray-400 hover:text-white transition duration-300">خدمات التخزين المبرد</a></li>
+                            <li><a href="#services" class="text-gray-400 hover:text-white transition duration-300">الحلول اللوجستية المتكاملة</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">اتصل بنا</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-map-marker-alt text-green-500 mt-1 ml-2"></i>
+                                <span>المملكة العربية السعودية، الرياض، طريق الملك فهد</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-phone-alt text-green-500 ml-2"></i>
+                                <span class="ltr">+966 12 345 6789</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-envelope text-green-500 ml-2"></i>
+                                <span class="ltr">info@rasman-transport.com</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-clock text-green-500 ml-2"></i>
+                                <span>الأحد - الخميس: 8:00 صباحاً - 5:00 مساءً</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="border-t border-gray-700 mt-10 pt-6 text-center text-gray-400">
+                    <p>© 2024 شركة رسمان للنقل المبرد. جميع الحقوق محفوظة.</p>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Back to top button -->
+        <a href="#" id="backToTop" class="back-to-top">
+            <i class="fas fa-arrow-up"></i>
+        </a>
+    </div>
+    
+    <!-- تعليمات لنشر الموقع على GitHub Pages -->
+    <!-- 
+    تعليمات نشر الموقع على GitHub Pages:
+    
+    1. أنشئ حساب على GitHub إذا لم يكن لديك حساب بالفعل
+    2. قم بإنشاء مستودع (repository) جديد، على سبيل المثال: rasman-transport
+    3. قم بتفعيل خاصية GitHub Pages من إعدادات المستودع:
+       - انتقل إلى "Settings" في المستودع
+       - قم بالتمرير لأسفل إلى قسم "GitHub Pages"
+       - اختر الفرع "main" كمصدر واحفظ التغييرات
+    4. قم برفع ملف index.html هذا إلى المستودع
+    5. سيكون موقعك متاحًا على عنوان:
+       https://[اسم-المستخدم].github.io/rasman-transport/
+    
+    ملاحظات هامة:
+    - تأكد من أن جميع الروابط والمسارات في الملف صحيحة
+    - يمكنك إضافة نطاق مخصص لاحقًا من إعدادات GitHub Pages
+    -->
+    
+    <script>
+        // تبديل اللغة
+        const langSwitcher = document.getElementById('langSwitcher');
+        const mobileLangSwitcher = document.getElementById('mobileLangSwitcher');
+        const languageContent = document.getElementById('language-content');
+        let currentLanguage = 'ar';
+        
+        function toggleLanguage() {
+            if (currentLanguage === 'ar') {
+                currentLanguage = 'en';
+                document.documentElement.setAttribute('lang', 'en');
+                document.documentElement.setAttribute('dir', 'ltr');
+                document.getElementById('currentLang').textContent = 'English';
+                document.getElementById('mobileCurrentLang').textContent = 'English';
+                // هنا يمكن إضافة محتوى باللغة الإنجليزية
+            } else {
+                currentLanguage = 'ar';
+                document.documentElement.setAttribute('lang', 'ar');
+                document.documentElement.setAttribute('dir', 'rtl');
+                document.getElementById('currentLang').textContent = 'العربية';
+                document.getElementById('mobileCurrentLang').textContent = 'العربية';
+                // هنا يمكن إعادة المحتوى إلى اللغة العربية
+            }
+        }
+        
+        langSwitcher.addEventListener('click', toggleLanguage);
+        mobileLangSwitcher.addEventListener('click', toggleLanguage);
+        
+        // قائمة الجوال
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const closeMenuBtn = document.getElementById('closeMenu');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+            menuOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        
+        function closeMenu() {
+            mobileMenu.classList.remove('active');
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        
+        closeMenuBtn.addEventListener('click', closeMenu);
+        menuOverlay.addEventListener('click', closeMenu);
+        
+        // روابط القائمة المتنقلة
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+        
+        // زر العودة إلى الأعلى
+        const backToTop = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+        
+        backToTop.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        // تأثيرات التمرير والظهور
+        const animateElements = document.querySelectorAll('.animate-fade-in');
+        
+        function checkVisibility() {
+            animateElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+        
+        // التحقق عند تحميل الصفحة
+        window.addEventListener('load', checkVisibility);
+        
+        // التحقق عند التمرير
+        window.addEventListener('scroll', checkVisibility);
+        
+        // تنشيط روابط القائمة عند التمرير
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        window.addEventListener('scroll', () => {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (window.scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        
+        // منع الإرسال الافتراضي لنموذج الاتصال
+        const contactForm = document.querySelector('.contact-form');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.');
+            contactForm.reset();
+        });
+    </script>
+</body>
+</html>
